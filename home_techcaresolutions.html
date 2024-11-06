@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial TechCare Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --cor-fundo: hsl(240, 100%, 30%);
+            --cor-hover: hsl(0, 0%, 50%);
+            --cor-link: hsl(0, 0%, 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 60px;
+            background: linear-gradient(to left, yellow, blue, black);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--cor-link);
+        }
+
+        .back-img {
+            height: 250px;
+            background-image: url('TechCareSolutions.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 200px;
+            margin: 20px auto;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-section {
+            margin: 20px 0;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-card h4 {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .product-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .product-card a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer nav ul li a {
+            color: var(--cor-link);
+            transition: color 0.3s;
+        }
+
+        footer nav ul li a:hover {
+            color: var(--cor-hover);
+        }
+
+        h2 {
+            color: aqua;
+        }
+
+        h1 {
+            color: darkmagenta;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .add-to-cart {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            color: #000;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .modal-header {
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .modal-body a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>TechCare Solutions</h2>
+    <div class="header-buttons">
+        <button class="add-to-cart">🛒 Adicionar ao Carrinho</button>
+        <div class="user-icon" onclick="openModal()">
+            <i class="fas fa-user"></i>
+            <i class='bx bx-run'></i>
+        </div>
+    </div>
+</header>
+</div>
+<div class="back-img"></div>
+
+<main>
+    <h1>Nossos Produtos</h1>
+    <div class="product-section">
+        <h3>Hardware</h3>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="pccpu.jpg" alt="PC CPU">
+                <h4>PC CPU</h4>
+                <p>Computador desktop com processador Intel Core i7, 16GB de RAM e SSD de 512GB, ideal para multitarefa e uso profissional.</p>
+                <a href="pccpu.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="impressora.jpg" alt="Impressora">
+                <h4>Impressora</h4>
+                <p>Impressora multifuncional a laser com impressão, cópia e digitalização de alta qualidade.</p>
+                <a href="impressora.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="cameradeseguranca.jpg" alt="Câmera de Segurança">
+                <h4>Câmera de Segurança</h4>
+                <p>Câmera de vigilância com visão noturna e detecção de movimento para proteção contínua.</p>
+                <a href="cameradeseguranca.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="miniprojetor.jpg" alt="Mini Projetor">
+                <h4>Mini Projetor</h4>
+                <p>Projetor portátil com resolução HD e conexão HDMI, ideal para apresentações e entretenimento.</p>
+                <a href="miniprojetor.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="servidoresdatacenters.jpg" alt="Servidores/Data Centers">
+                <h4>Servidores/Data Centers</h4>
+                <p>Servidores de alta capacidade para data centers, com suporte para armazenamento e processamento em larga escala.</p>
+                <a href="servidores_datacenters.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="totem.jpg" alt="Totem">
+                <h4>Totem</h4>
+                <p>Totem interativo para autoatendimento, com tela sensível ao toque e opções de pagamento integradas.</p>
+                <a href="totem.html">Ver Mais</a>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    
+    <div class="product-section">
+        <h3>Software</h3>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="mcaffe.jpg" alt="mcaffe">
+                <h4>McAfee</h4>
+                <p>Antivírus robusto para proteção em tempo real contra malware, spyware e ameaças online.</p>
+                <a href="mcaffe.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="spiceworks.jpg" alt="spiceworks">
+                <h4>SpiceWorks</h4>
+                <p>Ferramenta de TI gratuita que inclui monitoramento de rede e helpdesk para pequenas empresas.</p>
+                <a href="spiceworks.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="solarwinds.jpg" alt="solarwinds">
+                <h4>SolarWinds</h4>
+                <p>Plataforma de monitoramento de rede e gerenciamento de desempenho para infraestruturas de TI.</p>
+                <a href="solarwinds.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="veeam_backupereplication.jpg" alt="veeambackupereplication">
+                <h4>Veeam Backup & Replication</h4>
+                <p>Solução avançada para backup, recuperação e replicação de dados críticos de servidores.</p>
+                <a href="veaam_backupereplication.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="manageengine.jpg" alt="manageEngine">
+                <h4>ManageEngine</h4>
+                <p>Suite de gerenciamento de TI para monitorar, automatizar e otimizar operações de TI.</p>
+                <a href="manageengine.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="googleworkspace.jpg" alt="googleworkspace">
+                <h4>Google Workspace</h4>
+                <p>Conjunto de aplicativos de produtividade do Google, incluindo Gmail, Drive, Docs e Meet.</p>
+                <a href="googleworkspace.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="sonicwall.jpg" alt="sonicwall">
+                <h4>SonicWall</h4>
+                <p>Firewall e segurança cibernética avançada para proteção de redes corporativas.</p>
+                <a href="sonicwall.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="connectwise.jpg" alt="connectwise">
+                <h4>ConnectWise</h4>
+                <p>Software de automação e gerenciamento para prestadores de serviços de TI.</p>
+                <a href="connectwise.html">Ver Mais</a>
+            </div>
+            <div class="product-card">
+                <img src="patch_my_pc.jpg" alt="patch my pc">
+                <h4>Patch My PC</h4>
+                <p>Ferramenta de atualização de software que mantém seus aplicativos sempre atualizados e seguros.</p>
+                <a href="patch_my_pc.html">Ver Mais</a>
+            </div>
+        </div>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="sobre.html" target="_blank">Sobre</a></li>
+            <li><a href="contato.html" target="_blank">Contato</a></li>
+            <li><a href="form_trabalhe.html" target="_blank">Trabalhe Conosco</a></li>
+            <li><a href="parceiros.html" target="_blank">Parceiros</a></li>
+            <li><a href="cases.html" target="_blank">Casos de Sucesso</a></li>
+            <li><a href="mapadosite.html" target="_blank">Mapa do Site</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="userModal">
+    <div class="modal-header">
+        Conta
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+        <a href="login.html">Login</a>
+        <a href="registro.html">Registrar</a>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("userModal").style.display = "block";
+        document.getElementById("modalOverlay").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("userModal").style.display = "none";
+        document.getElementById("modalOverlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

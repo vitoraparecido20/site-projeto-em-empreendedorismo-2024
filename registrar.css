@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+}
+
+.forms-container {
+    width: 50%; /* Ajusta o formulário de login e registro para ocupar metade da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-form {
+    background: #fff;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.input-field i {
+    margin-right: 10px;
+}
+
+.input-field input {
+    border: none;
+    outline: none;
+    background: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #2980b9;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #6dd5fa;
+}
+
+.social-text {
+    margin: 20px 0;
+    font-size: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    background: #2980b9;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background: #6dd5fa;
+}
+
+.panels-container {
+    width: 50%; /* Ajusta a parte da imagem e texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 80%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
