@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC CPU - Detalhes do Produto</title>
+    <style>
+        /* Estilização básica */
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #ddd;
+        }
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-details button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .product-details button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-details">
+    <img src="pccpu.jpg" alt="pccpu">
+    <h1>PC CPU</h1>
+    <p>g> Computador desktop de alta performance, com processador Intel Core i7, 16GB de RAM e SSD de 512GB, ideal para multitarefas e uso profissional intensiv</p>
+    <p><strong>Preço:</strong>> R$ 4.500,</p>
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+</div>
+
+<script>
+    function adicionarAoCarrinho() {
+        alert("Produto adicionado ao carrinho!");
+        // Aqui você pode adicionar código para salvar o item no carrinho, como em uma lista de compras.
+    }
+</script>
+
+</body>
+</html>
